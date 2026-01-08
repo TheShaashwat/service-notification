@@ -1,0 +1,33 @@
+BEST Design Pattern for Notification Service (Spring Boot)
+
+👉 Strategy Pattern + Factory Pattern
+This combination is the BEST and industry-standard choice for a notification service.
+
+✅ Strategy Pattern
+    Each notification type (Email, SMS, Push) has its own logic
+    No if-else or switch mess
+    Easy to add WhatsApp / Slack / Webhook later
+✅ Factory Pattern
+    Decides which notification to send at runtime
+    Keeps controller & service clean
+    Follows Open–Closed Principle
+💡 Amazon, Netflix, Uber, Swiggy use this exact approach
+
+Controller → Service → Factory → Strategy (Email | SMS | Push)
+
+notification-service
+ └── src/main/java/com/example/notification
+     ├── controller
+     │    └── NotificationController.java
+     ├── factory
+     │    └── NotificationFactory.java
+     ├── service
+     │    └── NotificationService.java
+     ├── strategy
+     │    ├── NotificationStrategy.java
+     │    ├── EmailNotification.java
+     │    ├── SmsNotification.java
+     │    └── PushNotification.java
+     └── NotificationApplication.java
+
+
