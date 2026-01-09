@@ -27,4 +27,16 @@ public class NotificationController {
 
         return "Notification Sent Successfully";
     }
+
+    @PostMapping("/email/pdf")
+    public String sendEmailWithPdf(
+            @RequestBody NotificationRequest request
+    ) {
+        notificationService.sendEmailWithPdf(
+                request.getTo(),
+                request.getMessage()
+        );
+        return "Email with PDF sent";
+    }
+
 }

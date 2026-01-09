@@ -1,0 +1,16 @@
+spring:
+  application:
+    name: notification-service
+
+  profiles:
+    active: dev   # change to prod in server
+
+  mail:
+    host: smtp.gmail.com
+    port: 587
+    properties:
+      mail:
+        smtp:
+          auth: true
+          starttls:
+            enable: true
